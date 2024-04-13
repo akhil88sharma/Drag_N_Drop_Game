@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Flying
   - Non Flying
+  - Insect
+  - Non Insect
+  - Group
+  - Solo
   layers:
   - Default
   - TransparentFX

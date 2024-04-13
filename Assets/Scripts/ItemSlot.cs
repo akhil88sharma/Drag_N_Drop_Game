@@ -6,11 +6,12 @@ using UnityEngine.EventSystems;
 public class ItemSlot : MonoBehaviour,IDropHandler
 {
     [SerializeField] private GameObject slot;
-    public static int animalCount;
+    public static int animalCount , incorrectAttempt;
 
     public void Start()
     {
         animalCount = 15;              //total animals in the scene
+        incorrectAttempt = 0;
     }
     public void OnDrop(PointerEventData eventData)
     {
@@ -20,6 +21,10 @@ public class ItemSlot : MonoBehaviour,IDropHandler
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
             eventData.pointerDrag.SetActive(false);
             animalCount--;
+        }
+        else
+        {
+            incorrectAttempt++;
         }
     }
 }
